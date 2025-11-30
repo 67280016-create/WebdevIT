@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มลงทะเบียนอีเวนต์</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>ลงทะเบียนเข้าร่วมอีเวนต์</h2>
+
+    <form id="registrationForm">
+
+        <!-- ชื่อ-นามสกุล -->
+        <label for="fullname">ชื่อ-นามสกุล <span style="color:red;">*</span></label>
+        <input type="text" id="fullname" name="fullname" required placeholder="กรอกชื่อ-นามสกุล">
+
+        <!-- อีเมล -->
+        <label for="email">อีเมล <span style="color:red;">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+        <!-- เบอร์โทร -->
+        <label for="phone">เบอร์โทร (10 หลัก)</label>
+        <input type="tel" id="phone" name="phone" required pattern="\d{10}" inputmode="numeric" placeholder="0812345678"
+            title="กรุณากรอกตัวเลข 10 หลัก">
+
+        <!-- เพศ -->
+        <label>เพศ</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="ชาย" required> ชาย</label>
+            <label><input type="radio" name="gender" value="หญิง"> หญิง</label>
+            <label><input type="radio" name="gender" value="อื่นๆ"> อื่นๆ</label>
+        </div>
+
+        <!-- ช่วงอายุ -->
+        <label for="age">ช่วงอายุ</label>
+        <select id="age" name="age">
+            <option value="" disabled selected>-- เลือกช่วงอายุ --</option>
+            <option value="<18">น้อยกว่า 18</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value=">35">มากกว่า 35</option>
+        </select>
+
+        <!-- ความสนใจ -->
+        <label>ความสนใจ (เลือกได้หลายข้อ)</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="interest" value="เทคโนโลยี"> เทคโนโลยี</label>
+            <label><input type="checkbox" name="interest" value="กีฬา"> กีฬา</label>
+            <label><input type="checkbox" name="interest" value="ดนตรี"> ดนตรี</label>
+            <label><input type="checkbox" name="interest" value="ศิลปะ"> ศิลปะ</label>
+            <label><input type="checkbox" name="interest" value="การท่องเที่ยว"> การท่องเที่ยว</label>
+        </div>
+
+        <!-- ยินยอมเงื่อนไข -->
+        <label>
+            <input type="checkbox" name="agreement" required> ข้าพเจ้ายินยอมเงื่อนไข
+        </label>
+
+        <!-- ปุ่ม -->
+        <button type="submit">ส่งข้อมูล</button>
+        <button type="reset">ล้างข้อมูล</button>
+
+    </form>
+
+    <script>
+        // Validate อย่างน้อยต้องเลือกความสนใจ 1 ข้อ
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (event) {
+            const interests = form.querySelectorAll('input[name="interest"]:checked');
+            if (interests.length === 0) {
+                alert('กรุณาเลือกความสนใจอย่างน้อย 1 ข้อ');
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
