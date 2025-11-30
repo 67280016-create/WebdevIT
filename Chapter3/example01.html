@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaHtml</title>
+</head>
+
+<body>
+    <!-- รูปแบบพื้นฐาน -->
+    <div> <audio controls>
+            <source src="media/winter-wind-402331.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div> <video width="640" height="360" controls>
+            <source src="media/313145_small.mp4" type="video/mp4">
+
+        </video>
+    </div>
+    <!-- ✅ ดี ให้ Browser เลือกรูปที่เหมาะสม -->
+    <img src="media/mushrooms-9946579_1280.jpg" srcset="media/mushrooms-9946579_640.jpg 640w, 
+                media/mushrooms-9946579_1280.jpg 1280w, 
+                media/mushrooms-9946579_1920.jpg 1920w" sizes="(max-width: 768px) 640px, 
+               (max-width: 1366px) 1280px, 1920px" alt="ภาพMushrooms">
+
+    <picture>
+        <!-- มือถือ แสดงรูปแนวตั้ง -->
+        <source media="(max-width: 768px)" srcset="media/landscape-9947733_1280.jpg">
+
+        <!-- Desktop แสดงรูปแนวนอน -->
+        <source media="(min-width: 769px)" srcset="media/prot.jpg">
+
+        <!-- รูปสำรอง -->
+        <img src="default.jpg" alt="รูปภาพ">
+    </picture>
+
+</body>
+
+</html>
