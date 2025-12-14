@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>รายการประกาศขายบ้านล่าสุด</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <div class="card-img">
+         <link rel="stylesheet" href="็House.css">
+  <img src="house.jpg" alt="">
+  <div class="badge">บ้านเดี่ยว</div>
+</div>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Prompt', sans-serif;
+            background: #f5f6f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 10px;
+            font-size: 12px;
+            color: #fff;
+            border-radius: 999px;
+        }
+
+        .badge.house {
+            background: #ff5a3c;
+        }
+
+        .badge.townhome {
+            background: #1e88e5;
+        }
+
+        .badge.condo {
+            background: #43a047;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏡 รายการประกาศขายบ้านล่าสุด</h1>
+
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="บ้านเดี่ยว" />
+                    <div class="badge house">บ้านเดี่ยว</div>
+                </div>
+                <div class="card-body">
+                    <div class="price">฿ 5,900,000</div>
+                    <div class="location">📍 หมู่บ้านซิตี้เพลส, บางนา</div>
+                    <div class="meta">
+                        <span>🛏 3 นอน</span>
+                        <span>🛁 3 น้ำ</span>
+                        <span>🚗 2 จอด</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="ทาวน์โฮม" />
+                    <div class="badge townhome">ทาวน์โฮม</div>
+                </div>
+                <div class="card-body">
+                    <div class="price">฿ 3,250,000</div>
+                    <div class="location">📍 พหลโยธิน, รามอินทรา</div>
+                    <div class="meta">
+                        <span>🛏 2 นอน</span>
+                        <span>🛁 2 น้ำ</span>
+                        <span>🚗 1 จอด</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="me/condo.jpg" alt="คอนโด" class="condo">
+                    <div class="badge condo">คอนโดมิเนียม</div>
+                </div>
+                <div class="card-body">
+                    <div class="price">฿ 2,890,000</div>
+                    <div class="location">📍 เอสโต้, พระราม 9</div>
+                    <div class="meta">
+                        <span>🛏 1 นอน</span>
+                        <span>🛁 1 น้ำ</span>
+                        <span>📐 35 ตร.ม.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="บ้านเดี่ยว" />
+                    <div class="badge house">บ้านเดี่ยว</div>
+                </div>
+                <div class="card-body">
+                    <div class="price">฿ 8,500,000</div>
+                    <div class="location">📍 เศรษฐสิริ, ราชพฤกษ์</div>
+                    <div class="meta">
+                        <span>🛏 4 นอน</span>
+                        <span>🛁 4 น้ำ</span>
+                        <span>🚗 3 จอด</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

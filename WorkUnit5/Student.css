@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Kanit", sans-serif;
+    background: #f8f9fa;
+    background-image: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.05) 0%,
+            rgba(59, 130, 246, 0.05) 100%),
+        radial-gradient(circle at 20% 30%,
+            rgba(99, 102, 241, 0.03) 0%,
+            transparent 50%),
+        radial-gradient(circle at 80% 70%,
+            rgba(59, 130, 246, 0.03) 0%,
+            transparent 50%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .students-grid
+        ========================================
+        คำแนะนำ:
+        1. ทำให้เป็น flex container
+        2. ให้ card จัดเรียงแบบหลายแถว (wrap)
+        3. จัดตำแหน่งให้อยู่ตรงกลาง
+        4. เพิ่มระยะห่างระหว่าง card
+        */
+.students-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* ขึ้นหลายแถว */
+    justify-content: center;
+    /* ⭐ สำคัญ: แถวสุดท้ายจะอยู่กลาง */
+    gap: 25px;
+    max-width: 1200px;
+    /* จำกัดความกว้างรวม */
+    margin: 0 auto;
+
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .student-card
+        ========================================
+        คำแนะนำ:
+        1. กำหนดความกว้าง (แนะนำ 280px)
+        2. ทำให้เป็น relative position (สำหรับ badge)
+        3. เพิ่ม background สีขาว
+        4. ทำมุมโค้ง และเงา
+        5. เพิ่ม transition สำหรับ hover effect
+        */
+.student-card {
+    width: 280px;
+    /* 1. กำหนดความกว้าง */
+    position: relative;
+    /* 2. relative สำหรับ badge */
+    background-color: #ffffff;
+    /* 3. พื้นหลังสีขาว */
+    border-radius: 12px;
+    /* 4. มุมโค้ง */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* เงา */
+    overflow: hidden;
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+    /* 5. transition */
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .student-card:hover
+        ========================================
+        คำแนะนำ:
+        - ทำให้ card ยกขึ้นเมื่อ hover (transform: translateY)
+        - เพิ่มเงาให้เข้มขึ้น
+        */
+.student-card:hover {
+    ransform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .status-badge
+        ========================================
+        คำแนะนำ:
+        1. ใช้ absolute position ให้อยู่มุมบนขวา
+        2. กำหนด padding และ border-radius
+        3. ตั้งค่า font-size และ font-weight
+        */
+.status-badge {
+    position: absolute;
+    /* 1. อยู่แบบ absolute */
+    top: 10px;
+    /* มุมบน */
+    right: 10px;
+    /* มุมขวา */
+    padding: 4px 10px;
+    /* 2. ระยะห่างด้านใน */
+    border-radius: 20px;
+    /* มุมโค้ง */
+    font-size: 12px;
+    /* 3. ขนาดตัวอักษร */
+    font-weight: bold;
+    /* ความหนาตัวอักษร */
+    background-color: #28a745;
+    /* สีพื้นหลัง (ปรับได้) */
+    color: #ffffff;
+}
+
+/* สี badge สำหรับแต่ละสถานะ - ทำให้แล้ว */
+.status-normal {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.status-probation {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.status-dismissed {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .card-image
+        ========================================
+        คำแนะนำ:
+        1. กำหนดความสูง (แนะนำ 200px)
+        2. ทำให้รูปภาพเต็มพื้นที่ (object-fit: cover)
+        3. ทำมุมโค้งด้านบน
+        */
+.card-image {
+    width: 100%;
+    height: 200px;
+    /* 1. กำหนดความสูง */
+    overflow: hidden;
+    /* ซ่อนส่วนเกินของรูป */
+    border-top-left-radius: 12px;
+    /* 3. มุมโค้งด้านบน */
+    border-top-right-radius: 12px;
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .card-content
+        ========================================
+        คำแนะนำ:
+        - เพิ่ม padding ให้เหมาะสม
+        */
+.card-content {
+    padding: 16px;
+}
+
+/* Style พื้นฐานสำหรับข้อความ - ทำให้แล้ว */
+.student-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.student-id {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .info-row
+        ========================================
+        คำแนะนำ:
+        1. ทำให้เป็น flex container
+        2. จัดเรียงแบบ space-between
+        3. จัดให้ item อยู่กึ่งกลางแนวตั้ง
+        4. เพิ่มระยะห่างระหว่างแถว
+        */
+.info-row {
+    display: flex;
+    /* 1. เป็น flex container */
+    justify-content: space-between;
+    /* 2. แยกซ้าย–ขวา */
+    align-items: center;
+    /* 3. กึ่งกลางแนวตั้ง */
+    margin-bottom: 8px;
+    /* 4. ระยะห่างระหว่างแถว */
+}
+
+.info-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.info-value {
+    font-size: 0.875rem;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* 
+        ========================================
+        TODO: เขียน CSS สำหรับ .gpa-display
+        ========================================
+        คำแนะนำ:
+        1. ทำให้เป็น flex container
+        2. จัดให้อยู่ตรงกลาง
+        3. เพิ่มขนาดตัวอักษรและสี
+        */
+.gpa-display {
+    display: flex;
+    /* 1. เป็น flex container */
+    justify-content: center;
+    /* 2. จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    font-size: 20px;
+    /* 3. เพิ่มขนาดตัวอักษร */
+    font-weight: bold;
+    color: #007bff;
+    /* สีตัวอักษร (ปรับได้) */
+    margin-top: 10px;
+}
+
+.gpa-display .gpa-value {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gpa-display .gpa-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-left: 5px;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 15px 0;
+}
