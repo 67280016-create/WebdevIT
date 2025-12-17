@@ -107,3 +107,8 @@ body {
     color: #2196f3;
     margin-right: 5px;
 }
+.divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 15px 0;
+}

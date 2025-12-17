@@ -1,0 +1,49 @@
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.hero {
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    margin: 40px 0 20px;
+    font-weight: 600;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background: #212529;
+    color: #fff;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ลบเส้นใต้ลิงก์ */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* เอฟเฟกต์ลอย */
+.content-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ตอนเอาเมาส์ชี้ */
+.content-card:hover {
+    transform: translateY(-10px);
+    /* ลอยขึ้น */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
